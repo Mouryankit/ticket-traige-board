@@ -33,11 +33,12 @@ Set `VITE_API_URL` to your backend URL, for example `http://localhost:5000`.
 
 ## API
 
-- `POST /tickets`
-- `GET /tickets?status=&priority=&breached=true`
-- `PATCH /tickets/:id`
-- `DELETE /tickets/:id`
-- `GET /tickets/stats`
+- `GET /bfhl/health`
+- `POST /bfhl/tickets`
+- `GET /bfhl/tickets?status=&priority=&breached=true`
+- `PATCH /bfhl/tickets/:id`
+- `DELETE /bfhl/tickets/:id`
+- `GET /bfhl/tickets/stats`
 
 ## Deployment Notes
 

@@ -5,6 +5,8 @@ import morgan from 'morgan';
 import ticketsRouter from './routes/tickets.js';
 import { errorHandler, notFound } from './middleware/errorHandler.js';
 
+const API_PREFIX = '/bfhl';
+
 export function createApp() {
   const app = express();
   const clientOrigin = process.env.CLIENT_ORIGIN || '*';
@@ -14,11 +16,11 @@ export function createApp() {
   app.use(express.json({ limit: '1mb' }));
   app.use(morgan('dev'));
 
-  app.get('/health', (req, res) => {
+  app.get(`${API_PREFIX}/health`, (req, res) => {
     res.json({ ok: true });
   });
 
-  app.use('/tickets', ticketsRouter);
+  app.use(`${API_PREFIX}/tickets`, ticketsRouter);
   app.use(notFound);
   app.use(errorHandler);
 
